@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Gcdbs.Models.Modelo>
+
+@{
+    ViewData["Title"] = "Modelos";
+}
+
+<h2>Modelos</h2>
+
+<p>
+    <a asp-action="Create">Cadastrar novo Modelo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeModelo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeModelo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdModelo">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdModelo">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdModelo">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

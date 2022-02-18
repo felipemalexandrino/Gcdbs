@@ -1,0 +1,27 @@
+﻿@model Gcdbs.Models.Montadora
+
+@{
+    ViewData["Title"] = "Excluir Montadora";
+}
+
+<h2>Exluir</h2>
+
+<h3>Voce tem certeza que quer excluir a montadora?</h3>
+<div>
+    <h4>Montadora</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeMontadora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeMontadora)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdMontadora" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>
